@@ -1,0 +1,70 @@
+<Page x:Class="Adtd.App.Views.DiagramsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      xmlns:l="clr-namespace:Adtd.App"
+      Title="{l:S Nav_Diagrams}"
+      ScrollViewer.CanContentScroll="False">
+  <Page.Resources>
+    <Style x:Key="Switch" TargetType="ui:ToggleSwitch" BasedOn="{StaticResource {x:Type ui:ToggleSwitch}}">
+      <Setter Property="Margin" Value="0,0,0,12" />
+    </Style>
+  </Page.Resources>
+  <ScrollViewer VerticalScrollBarVisibility="Auto">
+    <StackPanel Margin="32,24,32,32" MaxWidth="1000" HorizontalAlignment="Left">
+      <TextBlock Style="{StaticResource PageTitle}" Text="{l:S Diagrams_Title}" />
+      <TextBlock Style="{StaticResource PageIntro}" Text="{l:S Diagrams_Intro}" />
+      <ui:InfoBar IsOpen="True" IsClosable="False" Severity="Informational" Title="" Message="{Binding SummaryText}" Margin="0,0,0,16" />
+
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="16" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <ui:Card Grid.Column="0" VerticalAlignment="Stretch" VerticalContentAlignment="Top">
+          <StackPanel>
+            <TextBlock Style="{StaticResource CardTitle}" Text="{l:S Diagrams_ForestSection}" />
+            <ui:ToggleSwitch Style="{StaticResource Switch}" Content="{l:S Diagrams_ForestSectionHeader}" IsChecked="{Binding ForestSectionHeader}" />
+            <ui:ToggleSwitch Style="{StaticResource Switch}" Content="{l:S Diagrams_Summary}" IsChecked="{Binding Summary}" />
+            <ui:ToggleSwitch Style="{StaticResource Switch}" Content="{l:S Diagrams_DomainsOverview}" IsChecked="{Binding DomainsOverview}" />
+            <ui:ToggleSwitch Style="{StaticResource Switch}" Content="{l:S Diagrams_OtherTrusts}" IsChecked="{Binding OtherTrusts}" Margin="40,0,0,12"
+                             IsEnabled="{Binding DomainsOverview}" />
+            <ui:ToggleSwitch Style="{StaticResource Switch}" Content="{l:S Diagrams_DomainDetails}" IsChecked="{Binding DomainDetails}" />
+
+            <TextBlock Style="{StaticResource CardTitle}" Margin="0,12,0,10" Text="{l:S Diagrams_SitesSection}" />
+            <ui:ToggleSwitch Style="{StaticResource Switch}" Content="{l:S Diagrams_SitesSectionHeader}" IsChecked="{Binding SitesSectionHeader}" />
+            <ui:ToggleSwitch Style="{StaticResource Switch}" Content="{l:S Diagrams_SitesOverview}" IsChecked="{Binding SitesOverview}" />
+            <ui:ToggleSwitch Style="{StaticResource Switch}" Content="{l:S Diagrams_LinkLabels}" IsChecked="{Binding LinkLabels}" Margin="40,0,0,12"
+                             IsEnabled="{Binding SitesOverview}" />
+            <ui:ToggleSwitch Style="{StaticResource Switch}" Content="{l:S Diagrams_ConsolidateEmptySites}" IsChecked="{Binding ConsolidateEmptySites}" Margin="40,0,0,12"
+                             IsEnabled="{Binding CanConsolidate}" />
+            <ui:ToggleSwitch Style="{StaticResource Switch}" Content="{l:S Diagrams_SiteDetails}" IsChecked="{Binding SiteDetails}" />
+          </StackPanel>
+        </ui:Card>
+
+        <ui:Card Grid.Column="2" VerticalAlignment="Stretch" VerticalContentAlignment="Top">
+          <StackPanel>
+            <TextBlock Style="{StaticResource CardTitle}" Text="{l:S Diagrams_ContentSection}" />
+            <ui:ToggleSwitch Style="{StaticResource Switch}" Content="{l:S Diagrams_Subnets}" IsChecked="{Binding Subnets}" />
+            <ui:ToggleSwitch Style="{StaticResource Switch}" Content="{l:S Diagrams_Addresses}" IsChecked="{Binding Addresses}" />
+            <ui:ToggleSwitch Style="{StaticResource Switch}" Content="{l:S Diagrams_Replication}" IsChecked="{Binding Replication}" />
+            <ui:ToggleSwitch Style="{StaticResource Switch}" Content="{l:S Diagrams_HideEmptySites}" IsChecked="{Binding HideEmptySites}" />
+            <ui:ToggleSwitch Style="{StaticResource Switch}" Content="{l:S Diagrams_Legend}" IsChecked="{Binding Legend}" />
+
+            <TextBlock Style="{StaticResource FieldLabel}" Margin="0,8,0,4" Text="{l:S Diagrams_MaxDcs}" />
+            <ui:NumberBox Value="{Binding MaxDcsPerSlide, UpdateSourceTrigger=LostFocus}" Minimum="1" Maximum="500" SmallChange="5" LargeChange="20"
+                          MaxDecimalPlaces="0" Width="160" HorizontalAlignment="Left" />
+            <TextBlock Style="{StaticResource FieldLabel}" Margin="0,12,0,4" Text="{l:S Diagrams_MinFont}" />
+            <ui:NumberBox Value="{Binding MinFontPt, UpdateSourceTrigger=LostFocus}" Minimum="6" Maximum="14" SmallChange="0.5" LargeChange="1"
+                          MaxDecimalPlaces="1" Width="160" HorizontalAlignment="Left" />
+            <TextBlock Style="{StaticResource Caption}" Margin="0,4,0,0" Text="{l:S Diagrams_MinFontNote}" />
+
+            <ui:Button Appearance="Secondary" Icon="{ui:SymbolIcon ArrowReset24}" Content="{l:S Diagrams_Reset}" Command="{Binding ResetCommand}" Margin="0,20,0,0" />
+          </StackPanel>
+        </ui:Card>
+      </Grid>
+    </StackPanel>
+  </ScrollViewer>
+</Page>

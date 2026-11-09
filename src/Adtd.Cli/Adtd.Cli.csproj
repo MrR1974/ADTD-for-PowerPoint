@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>adtd</AssemblyName>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>false</SelfContained>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Adtd.Collect\Adtd.Collect.csproj" />
+    <ProjectReference Include="..\Adtd.PowerPoint\Adtd.PowerPoint.csproj" />
+    <ProjectReference Include="..\Adtd.Imaging\Adtd.Imaging.csproj" />
+  </ItemGroup>
+</Project>

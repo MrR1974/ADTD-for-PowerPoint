@@ -1,0 +1,10 @@
+bin/
+obj/
+.vs/
+*.user
+# Real-world diagrams: local only, never committed
+samples/local/
+# Generated outputs
+out/
+
+dist/

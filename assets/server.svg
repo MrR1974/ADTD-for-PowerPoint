@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Default domain controller icon for ADTD for PowerPoint: a tower server. Users replace it with their own. -->
+  <rect x="14" y="4" width="36" height="56" rx="4" fill="#3B4252"/>
+  <rect x="18" y="9" width="28" height="9" rx="1.5" fill="#5E6779"/>
+  <rect x="18" y="21" width="28" height="9" rx="1.5" fill="#5E6779"/>
+  <rect x="18" y="33" width="28" height="9" rx="1.5" fill="#5E6779"/>
+  <rect x="21" y="12.5" width="14" height="2" rx="1" fill="#2E3440"/>
+  <rect x="21" y="24.5" width="14" height="2" rx="1" fill="#2E3440"/>
+  <rect x="21" y="36.5" width="14" height="2" rx="1" fill="#2E3440"/>
+  <circle cx="41" cy="13.5" r="1.8" fill="#A3E635"/>
+  <circle cx="41" cy="25.5" r="1.8" fill="#A3E635"/>
+  <circle cx="41" cy="37.5" r="1.8" fill="#FBBF24"/>
+  <circle cx="32" cy="51" r="3.5" fill="none" stroke="#88C0D0" stroke-width="1.6"/>
+</svg>

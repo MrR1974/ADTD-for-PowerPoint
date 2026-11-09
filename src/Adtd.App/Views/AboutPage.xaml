@@ -1,0 +1,18 @@
+<Page x:Class="Adtd.App.Views.AboutPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      xmlns:l="clr-namespace:Adtd.App"
+      Title="{l:S Nav_About}"
+      ScrollViewer.CanContentScroll="False">
+  <ScrollViewer VerticalScrollBarVisibility="Auto">
+    <StackPanel Margin="32,24,32,32" MaxWidth="900" HorizontalAlignment="Left">
+      <TextBlock Style="{StaticResource PageTitle}" Text="{l:S App_Title}" />
+      <TextBlock Style="{StaticResource PageIntro}" Text="{Binding Version}" Margin="0,0,0,4" />
+      <TextBlock Style="{StaticResource PageIntro}" Text="{l:S About_Intro}" />
+      <ui:Card>
+        <TextBlock Style="{StaticResource Body}" Text="{Binding Notices}" />
+      </ui:Card>
+    </StackPanel>
+  </ScrollViewer>
+</Page>

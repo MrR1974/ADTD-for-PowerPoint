@@ -1,0 +1,15 @@
+<Project>
+  <!-- Applies to every project in the solution. -->
+  <PropertyGroup>
+    <Version>0.0.0-local</Version>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <!-- Each src project exposes its internals to its own test project (Adtd.X → Adtd.X.Tests). -->
+  <ItemGroup Condition="!$(MSBuildProjectName.EndsWith('.Tests'))">
+    <InternalsVisibleTo Include="$(MSBuildProjectName).Tests" />
+  </ItemGroup>
+</Project>

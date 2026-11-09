@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <!-- Set here, not on the command line: Directory.Build.props sets TargetFramework, and `-r win-x64` then fails restore. -->
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>false</SelfContained>
+    <RootNamespace>Adtd.App</RootNamespace>
+    <AssemblyName>ADTD for PowerPoint</AssemblyName>
+    <Product>ADTD for PowerPoint</Product>
+    <Description>Draws Active Directory domains and sites as native PowerPoint slides in your own template.</Description>
+    <ApplicationIcon>Adtd.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WPF-UI" Version="4.3.0" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Adtd.Collect\Adtd.Collect.csproj" />
+    <ProjectReference Include="..\Adtd.Imaging\Adtd.Imaging.csproj" />
+    <ProjectReference Include="..\Adtd.PowerPoint\Adtd.PowerPoint.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Adtd.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Strings.resx" LogicalName="Adtd.App.Strings.resources" />
+    <EmbeddedResource Include="..\..\NOTICE.md" LogicalName="NOTICE.md" />
+  </ItemGroup>
+
+</Project>
